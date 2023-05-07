@@ -27,17 +27,17 @@ export const tokensDark = {
     900: "#070812",
   },
   secondary: {
-    // yellow
+    // green
     50: "#f0f0f0", // manually adjusted
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
-    400: "#ffda85",
-    500: "#ffd166",
-    600: "#cca752",
-    700: "#997d3d",
-    800: "#665429",
-    900: "#332a14",
+    100: "#d5e5e3",
+    200: "#abccc8",
+    300: "#80b2ac",
+    400: "#569991",
+    500: "#2c7f75",
+    600: "#23665e",
+    700: "#1a4c46",
+    800: "#12332f",
+    900: "#091917",
   },
 };
 
@@ -107,30 +107,30 @@ export const themeSettings = (mode) => {
           }),
     },
     typography: {
-      fontFamily: ["Inter", "sans-serif"].join(","),
+      fontFamily: ["Montserrat", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
         fontSize: 40,
       },
       h2: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
         fontSize: 32,
       },
       h3: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
         fontSize: 24,
       },
       h4: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
         fontSize: 20,
       },
       h5: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
         fontSize: 16,
       },
       h6: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
         fontSize: 14,
       },
     },
