@@ -21,6 +21,7 @@ import {
   PaidOutlined,
   AnalyticsOutlined,
   GroupOutlined,
+  AccountCircleOutlined,
   RestaurantOutlined,
   ShoppingCartOutlined,
   ReceiptLongOutlined,
@@ -35,7 +36,7 @@ import {
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from "./FlexBetween";
 
 const navItems = [
   {
@@ -44,9 +45,9 @@ const navItems = [
   },
   {
     text: "Overview",
-    icon: null,
+    icon: <AnalyticsOutlined />,
   },
-  {
+  /* {
     text: "Daily",
     icon: <TodayOutlined />,
   },
@@ -57,12 +58,12 @@ const navItems = [
   {
     text: "Breakdown",
     icon: <PieChartOutlined />,
-  },
+  }, */
   {
     text: "Stocks",
-    icon: null,
+    icon: <InventoryOutlined />,
   },
-  {
+  /* {
     text: "Products",
     icon: <RestaurantOutlined />,
   },
@@ -77,34 +78,35 @@ const navItems = [
   {
     text: "Geography",
     icon: <PublicOutlined />,
-  },
+  }, */
   {
     text: "Workforce",
-    icon: null,
+    icon: <GroupOutlined />,
   },
-  {
+  /* {
     text: "Admin",
     icon: <AdminPanelSettingsOutlined />,
   },
   {
     text: "Performance",
     icon: <TrendingUpOutlined />,
-  },
+  }, */
   {
     text: "Accounting",
-    icon: null,
+    icon: <PaidOutlined />,
   },
-  {
+  /*  {
     text: "Income",
     icon: <PaidOutlined />,
   },
   {
     text: "All",
     icon: <PointOfSaleOutlined />,
-  },
+  }, */
 ];
 
 const Sidebar = ({
+  user,
   drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,
@@ -125,21 +127,21 @@ const Sidebar = ({
         <Drawer
           open={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
-          variant="presistent"
+          variant="persistent"
           anchor="left"
           sx={{
             width: drawerWidth,
             "& .MuiDrawer-paper": {
               color: theme.palette.secondary[200],
               backgroundColor: theme.palette.background.alt,
-              boxSizing: "border-box",
+              boxSixing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
               width: drawerWidth,
             },
           }}
         >
           <Box width="100%">
-            <Box m="1.5 rem 2rem 2rem 3rem">
+            <Box margin="1.5 rem 2rem 2rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
@@ -157,7 +159,10 @@ const Sidebar = ({
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    <Typography
+                      key={text}
+                      sx={{ margin: "2.25rem 0 1rem 3rem" }}
+                    >
                       {text}
                     </Typography>
                   );
@@ -184,7 +189,7 @@ const Sidebar = ({
                     >
                       <ListItemIcon
                         sx={{
-                          ml: "2rem",
+                          marginLeft: "2rem",
                           color:
                             active === lcText
                               ? theme.palette.primary[600]
@@ -195,13 +200,52 @@ const Sidebar = ({
                       </ListItemIcon>
                       <ListItemText primary={text} />
                       {active === lcText && (
-                        <ChevronRightOutlined sx={{ ml: "auto" }} />
+                        <ChevronRightOutlined sx={{ marginLeft: "auto" }} />
                       )}
                     </ListItemButton>
                   </ListItem>
                 );
               })}
             </List>
+          </Box>
+
+          <Box position="absolute" bottom="2rem">
+            <Divider />
+            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+              <Box
+              /* height="40px"
+                width="40px"
+                borderRadius="50%"
+                sx={{ objectFit: "cover" }} */
+              />
+              <AccountCircleOutlined
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "20px ",
+                }}
+              />
+              <Box textAlign="left">
+                <Typography
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize="0.8rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {user.occupation}
+                </Typography>
+              </Box>
+              <SettingsOutlined
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "20px ",
+                }}
+              />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}
@@ -210,4 +254,3 @@ const Sidebar = ({
 };
 
 export default Sidebar;
-

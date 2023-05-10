@@ -14,7 +14,6 @@ import { setMode } from "state";
 import {
   AppBar,
   Button,
-  Box,
   Typography,
   IconButton,
   InputBase,
@@ -39,17 +38,13 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
         <FlexBetween>
-          <IconButton
-            onClick={
-              () =>
-                 setIsSidebarOpen(!isSidebarOpen)
-            }
-          >
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
         </FlexBetween>
+
         {/* RIGHT SIDE */}
-        <FlexBetween gap="1.5rem">
+        <FlexBetween sx={{ gap: "1.5rem" }}>
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkModeOutlined sx={{ fontSize: "25px" }} />
