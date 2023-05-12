@@ -22,6 +22,10 @@ import {
   AnalyticsOutlined,
   GroupOutlined,
   AccountCircleOutlined,
+  RecommendOutlined,
+  AdminPanelSettingsOutlined,
+  KeyboardArrowDownOutlined,
+  KeyboardArrowUpOutlined,
   RestaurantOutlined,
   ShoppingCartOutlined,
   ReceiptLongOutlined,
@@ -30,7 +34,6 @@ import {
   TodayOutlined,
   Groups2Outlined,
   CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
   TrendingUpOutlined,
   PieChartOutlined,
 } from "@mui/icons-material";
@@ -44,10 +47,18 @@ const navItems = [
     icon: <HomeOutlined />,
   },
   {
+    text: "Restaurants",
+    icon: null,
+  },
+  {
     text: "Overview",
     icon: <AnalyticsOutlined />,
   },
-  /* {
+  {
+    text: "Recommendations",
+    icon: <RecommendOutlined />,
+  },
+  {
     text: "Daily",
     icon: <TodayOutlined />,
   },
@@ -58,12 +69,12 @@ const navItems = [
   {
     text: "Breakdown",
     icon: <PieChartOutlined />,
-  }, */
+  },
   {
     text: "Stocks",
-    icon: <InventoryOutlined />,
+    icon: null,
   },
-  /* {
+  {
     text: "Products",
     icon: <RestaurantOutlined />,
   },
@@ -78,32 +89,33 @@ const navItems = [
   {
     text: "Geography",
     icon: <PublicOutlined />,
-  }, */
+  },
   {
     text: "Workforce",
-    icon: <GroupOutlined />,
+    icon: null,
   },
-  /* {
+  {
     text: "Admin",
     icon: <AdminPanelSettingsOutlined />,
   },
   {
     text: "Performance",
     icon: <TrendingUpOutlined />,
-  }, */
+  },
   {
     text: "Accounting",
-    icon: <PaidOutlined />,
+    icon: null,
   },
-  /*  {
+   {
     text: "Income",
     icon: <PaidOutlined />,
   },
   {
     text: "All",
     icon: <PointOfSaleOutlined />,
-  }, */
+  },
 ];
+
 
 const Sidebar = ({
   user,
@@ -209,7 +221,7 @@ const Sidebar = ({
             </List>
           </Box>
 
-          <Box position="absolute" bottom="2rem">
+          <Box /* position="absolute" */ bottom="2rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box
