@@ -4,6 +4,7 @@ import { IconButton, TextField, InputAdornment } from "@mui/material";
 import {
   GridToolbarDensitySelector,
   GridToolbarContainer,
+  GridToolbarFilterButton,
   GridToolbarExport,
   GridToolbarColumnsButton,
 } from "@mui/x-data-grid";
@@ -15,12 +16,13 @@ const DataGridCustomToolbar = ({ searchInput, setSearchInput, setSearch }) => {
       <FlexBetween width="100%">
         <FlexBetween>
           <GridToolbarColumnsButton />
+          <GridToolbarFilterButton />
           <GridToolbarDensitySelector />
           <GridToolbarExport />
         </FlexBetween>
         <TextField
           label="Search..."
-          sx={{ mb: "0.5rem", width: "15rem" }}
+          sx={{ marginBottom: "0.5rem", width: "15rem" }}
           onChange={(e) => setSearchInput(e.target.value)}
           value={searchInput}
           variant="standard"

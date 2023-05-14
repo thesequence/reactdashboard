@@ -9,10 +9,10 @@ export const api = createApi({
     "Customers",
     "Transactions",
     "Geography",
-    /* "Sales",
-    "Admins",
-    "Performance",
-    "Dashboard", */
+    "Sales",
+    /* "Admins", */
+    /* "Performance", */
+    /* "Dashboard", */
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -36,22 +36,22 @@ export const api = createApi({
       providesTags: ["Transactions"],
     }),
     getGeography: build.query({
-      query: () => "client/geography",
+      query: () => "stocks/geography",
       providesTags: ["Geography"],
     }),
-    /* getSales: build.query({
-      query: () => "sales/sales",
+    getSales: build.query({
+      query: () => "overview/overview",
       providesTags: ["Sales"],
     }),
-    getAdmins: build.query({
+    /* getAdmins: build.query({
       query: () => "management/admins",
       providesTags: ["Admins"],
-    }),
-    getUserPerformance: build.query({
+    }), */
+    /* getUserPerformance: build.query({
       query: (id) => `management/performance/${id}`,
       providesTags: ["Performance"],
-    }),
-    getDashboard: build.query({
+    }), */
+    /* getDashboard: build.query({
       query: () => "general/dashboard",
       providesTags: ["Dashboard"],
     }), */
@@ -64,8 +64,8 @@ export const {
   useGetCustomersQuery,
   useGetTransactionsQuery,
   useGetGeographyQuery,
-  /* useGetSalesQuery,
-  useGetAdminsQuery,
-  useGetUserPerformanceQuery,
-  useGetDashboardQuery, */
+  useGetSalesQuery,
+  /* useGetAdminsQuery, */
+  /* useGetUserPerformanceQuery, */
+  /* useGetDashboardQuery, */
 } = api;

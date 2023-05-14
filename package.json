@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@nivo/calendar": "^0.83.0",
+    "@nivo/core": "^0.83.0",
+    "@nivo/geo": "^0.83.0",
+    "@nivo/line": "^0.83.0",
+    "@nivo/pie": "^0.83.0",
+    "@nivo/radial-bar": "^0.83.0",
+    "react-datepicker": "^4.11.0"
+  }
+}
